@@ -1,0 +1,258 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    font-family: 'Baloo Bhai 2', cursive;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navigation Bar */
+#navbar {
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* width: 100%; */
+}
+
+#navbar::before {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.4;
+    ;
+}
+
+
+/* Navigation Bar logo */
+
+#logo {
+    margin: 0px 30px
+}
+
+#logo img {
+    margin: 0px 58px 0px 0px;
+    height: 75px;
+}
+
+/* Navigation Bar list styling */
+
+#navbar ul {
+    display: flex;
+}
+
+#navbar ul li {
+    font-size: 1.3rem;
+    list-style-type: none;
+    padding-bottom: 12px;
+}
+
+
+#navbar ul a {
+    text-decoration: none;
+    padding: 0px 15px;
+    border-radius: 20px;
+    color: white;
+    transition: background-color;
+    transition-duration: 0.3s;
+}
+
+#navbar ul a:hover {
+    color: rgb(214, 213, 213);
+    background-color: rgb(151, 105, 52);
+    box-shadow: 1px 1px 1px 1px rgb(15, 15, 15);
+    font-weight: bold;
+}
+
+/* Home content */
+
+#home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 380px;
+}
+
+#home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0%;
+    background: url(../bg3.jpg) no-repeat center center/cover;
+    height: 81%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.9;
+}
+
+.h-primary {
+
+    padding: 10px 200px;
+    font-size: 2.2rem;
+}
+
+
+
+#home p {
+    padding: 5px 200px;
+    text-align: center;
+}
+
+#home button {
+    padding: 3px 20px;
+    margin: 20px;
+    background-color: rgb(151, 105, 52);
+    border-radius: 10px;
+    border: 1px solid black;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+#home button:hover {
+    color: rgb(214, 213, 213);
+    background-color: rgb(151, 105, 52);
+    font-weight: bold;
+    box-shadow: 1px 1px 1px 1px rgb(15, 15, 15);
+}
+
+/* SERVICES SECTION */
+#services-container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(253, 223, 218);
+}
+
+#services-container h1 {
+    font-family: 'Bree Serif', serif;
+    margin: auto;
+}
+
+#services {
+    margin: 30px;
+    display: flex;
+}
+
+#services .box {
+    border: 2px solid brown;
+    border-radius: 30px;
+    margin: 5px 10px;
+    padding: 5px 10px;
+    box-shadow: 1px 1px 1px 1px grey;
+    background-color: rgb(248, 240, 217);
+}
+
+.box p {
+    text-align: center;
+    font-family: 'Bree Serif', serif;
+}
+
+#services img {
+    height: 150px;
+    width: 160px;
+    display: block;
+    margin: auto;
+}
+
+.h-secondary {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/* CLIENT SECTION */
+
+#client-section {
+    height: 300px;
+    position: relative;
+}
+
+#client-section::before {
+    content: "";
+    position: absolute;
+    background: url(../bg1.jpg);
+    height: 300px;
+    width: 100%;
+    opacity: 0.4;
+}
+
+#client-section h1 {
+    text-align: center;
+}
+
+.client {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.client div {
+    padding: 20px;
+}
+
+.client img {
+    height: 100px;
+}
+
+/* CONTACT SECTION */
+#contact {
+    position: relative;
+}
+
+#contact::before {
+    content: "";
+    background: url(../contact.jpg)no-repeat center center/cover;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.6;
+
+}
+
+#contact h1 {
+    text-align: center;
+    font-family: 'Bree Serif', serif;
+
+
+}
+
+#contact-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#contact-box form {
+    width: 40%;
+    padding: 20px;
+}
+
+#contact-box input,
+#contact-box textarea {
+    width: 100%;
+    padding: 1px 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+#contact-box label {
+    width: 40%;
+    font-size: 1.1rem;
+    font-family: 'Bree Serif', serif;
+
+}
+
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: 'Bree Serif', serif;
+
+}
