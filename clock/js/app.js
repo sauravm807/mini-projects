@@ -29,9 +29,7 @@ setInterval(() => {
     box4.innerHTML = `Date : ${date.toDateString()} `;
 }, 1000);
 
-let date = new Date();
 
-console.log(date)
 
 
 
