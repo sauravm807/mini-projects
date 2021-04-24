@@ -3,6 +3,7 @@ showNotes();
 
 document.querySelector("#addBtn").addEventListener("click", function (e) {
     let addTxt = document.querySelector("#addTxt");
+    let addTitle = document.querySelector("#addTitle");
     let notes = localStorage.getItem("notes");
     let notesObj;
     if (!notes) {
@@ -12,11 +13,16 @@ document.querySelector("#addBtn").addEventListener("click", function (e) {
         //assiging the value of notes of local storage to notesObj 
         notesObj = JSON.parse(notes);
     }
-    if (addTxt.value.length) {
-        notesObj.push(addTxt.value.trim());
+    let myObj = {
+        title: addTitle.value,
+        text: addTxt.value
+    };
+    if ((addTxt.value.length) && (addTitle.value)) {
+        notesObj.push(myObj);
     }
     localStorage.setItem("notes", JSON.stringify(notesObj)); //setting notes in the local storage
     addTxt.value = "";
+    addTitle.value = "";
     showNotes();
 });
 
@@ -29,13 +35,13 @@ function showNotes() {
     } else {
         notesObj = JSON.parse(notes);
     }
-  
+
     let html = "";
     for (let i = 0; i < notesObj.length; i++) {
         html += ` <div class="noteCard my-2 mx-2 card" style="width: 18rem;">
                     <div class="card-body">
-                        <h5 class="card-title">Note ${i + 1}</h5>
-                        <p class="card-text">${notesObj[i]}</p>
+                        <h5 class="card-title">${i + 1, notesObj[i].title}</h5>
+                        <p class="card-text">${notesObj[i].text}</p>
                         <button class="btn btn-primary my-1" onclick="deleteNotes(${i})" >Delete Note</button>
                     </div>
                  </div> `;
