@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech4Edu.com</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" media="screen and (max-width: 1130px" href="../css/phone.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=BioRhyme&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation Bar Section -->
+    <nav class="navBar nav-height">
+        <div class="logo">
+            <img src="../image/logo.jpg" alt="logo.jpg">
+            <span>Tech4Edu</span>
+        </div>
+
+        <ul class="nav-list v-class">   
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#service">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="rightNav v-class">
+            <input type="text" name="search" id="search" placeholder="Search">
+            <button class="btn">Search</button>
+        </div>
+        <div id="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+
+    <!-- First Section -->
+    <section class="firstSection">
+        <div class="main">
+            <div class="firstHalf">
+                <h1>The future of education is here</h1>
+                <p>The concept of traditional education has changed radically within the last couple of years. Being
+                    physically present in a classroom isn’t the only learning option anymore — not with the rise of the
+                    internet and new technologies, at least. Nowadays, you have access to a quality education whenever
+                    and
+                    wherever you want, as long as you have access to a computer. We are now entering a new era — the
+                    revolution of online education.</p>
+                <button class="btn" type="button">Watch Video</button>
+                <button class="btn" type="button">Subscribe</button>
+            </div>
+            <div class="secondHalf">
+                <img src="../image/img1.jpg" alt="img1.jpg">
+            </div>
+        </div>
+    </section>
+<!-- contents -->
+    <section class="sectionRight">
+        <div class="para">
+            <h1>It's flexible</h1>
+            <p>Online education enables the teacher and the student to set their own learning pace, and there’s the
+                added flexibility of setting a schedule that fits everyone’s agenda. As a result, using an online
+                educational platform allows for a better balance of work and studies, so there’s no need to give
+                anything up. Studying online teaches you vital time management skills, which makes finding a good
+                work-study balance easier. Having a common agenda between the student and teacher can also prompt
+                both parties to accept new responsibilities and have more autonomy. </p>
+
+        </div>
+        <div class="thumbnail">
+            <img src="../image/img2.jpg" alt="img2.jpg">
+        </div>
+    </section>
+
+    <section class="sectionLeft">
+        <div class="para">
+            <h1>It offers a wide selection of programs. </h1>
+            <p>In a space as vast and wide as the internet, there are infinite skills and subjects to teach and learn. A
+                growing number of universities and higher education schools are offering online versions of their
+                programs for various levels and disciplines. From music composition to quantum physics, there are
+                options for every type of student. Studying your program online is also a great option for getting an
+                official certificate, diploma, or degree without physically setting foot on a university campus. </p>
+
+        </div>
+        <div class="thumbnail">
+            <img src="../image/img3.jpg" alt="img3.jpg">
+        </div>
+    </section>
+    <section class="sectionRight last">
+        <div class="para">
+            <h1>It’s accessible. </h1>
+            <p>Online education enables you to study or teach from anywhere in the world. This means there’s no need to
+                commute from one place to another, or follow a rigid schedule. On top of that, not only do you save
+                time, but you also save money, which can be spent on other priorities. The virtual classroom is also
+                available anywhere there’s an internet connection, and a good way to take advantage of this is to
+                travel. For example, if you’re studying abroad and want to get a job, online education is a great
+                choice. There’s no reason to give up on working or studying while exploring new and exotic places. </p>
+
+        </div>
+        <div class="thumbnail">
+            <img src="../image/img4.jpg" alt="img4.jpg">
+        </div>
+    </section>
+<!-- contact us -->
+    <form action="#" method="get" id="contact">
+        <h1>Contact Us</h1>
+        <div class="name">
+            <div>
+                <label for="firstName">First Name</label><br>
+                <input type="text" name="firstName" id="firstName" placeholder="First Name" required>
+            </div>
+            <div>
+                <label for="lastName">Last Name</label><br>
+                <input type="text" name="lastName" id="lastName" placeholder="Last Name" required>
+            </div>
+        </div>
+        <div class="detail">
+            <label for="email">Email Address</label>
+            <input type="email" name="email" id="email" placeholder="Email Address" required>
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="9876543210" pattern="[0-9]{10}" required>
+            <label for="reason">Reason for Contact</label>
+            <textarea name="reason" id="reason" cols="80" rows="3"></textarea>
+            <button type="submit" class="btn"> Contact Us</button>
+        </div>
+    </form>
+<!-- footer -->
+<footer>
+    <p> Copyright &copy www.tech4edu.com. All Right Reserved.</p>
+</footer>
+
+<script src="../js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+/* Navigation Bar */
+.navBar {
+    flex-direction: column;
+    padding: 10px 0px;
+    transition: all .5s ease-in;
+    height: 350px;
+}
+
+.nav-list {
+    flex-direction: column;
+    transition: all .5s ease-in;
+}
+
+.logo img {
+    margin: 10px auto;
+}
+
+.logo span {
+    display: none;
+}
+
+.rightNav {
+    flex-direction: column;
+    padding: 13px 0px;
+    transition: all .5s ease-in;
+    width: 70%;
+}
+
+.rightNav input {
+    width: 100%;
+    margin: 5px 0px;
+}
+
+#burger {
+    display: block;
+}
+
+.nav-height {
+    height: 79px;
+}
+
+.v-class {
+    opacity: 0;
+}
+
+/* First section */
+.main {
+    flex-direction: column-reverse;
+}
+
+.firstHalf {
+    width: 100%;
+}
+
+.secondHalf {
+    width: 65%;
+}
+
+/* sectionRight  */
+
+.sectionRight {
+    flex-direction: column-reverse;
+    margin: 60px 0px 40px 30px;
+    padding-bottom: 0;
+}
+
+.para {
+    width: 100%;
+}
+
+.para p {
+    line-height: 20px;
+    margin-bottom: 25px;
+}
+
+.thumbnail {
+    width: 35%;
+}
+
+.sectionLeft {
+    flex-direction: column-reverse;
+    margin: 50px 30px;
+    width: 87%;
+    height: auto;
+}
+.sectionLeft h1 {
+    line-height: 35px;
+    margin-top: 15px;
+}
+
+#contact div {
+    width: 90%;
+}
+
+footer {
+    font-size: 16px;
+}
