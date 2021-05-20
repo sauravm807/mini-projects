@@ -8,18 +8,10 @@ body {
 }
 
 div,
-ul,
-ol,
 li,
 h1,
-h2,
-h3,
-h4,
-h5,
-h6,
 form,
 input,
-textarea,
 p {
     margin: 0;
     padding: 0;
@@ -65,6 +57,11 @@ body {
 .items-center {
     align-items: center;
 }
+
+.hide {
+    display: none;
+}
+
 
 .container .content {
     color: white;
@@ -113,12 +110,31 @@ body {
     box-shadow: 0px 5px rgba(0, 0, 0, 0.2);
 }
 
+
 .container .form-content .form input {
-    margin-bottom: 0.8rem;
+    margin: 0.2rem 0;
     padding: 0.5rem 1.5rem;
     border-radius: 4px;
     border: 1px solid var(--grayish-blue);
     font-weight: 600;
+}
+
+.container .form-content .form span {
+    position: relative;
+}
+
+.container .form-content .form span img {
+    position: absolute;
+    width: 20px;
+    top: -30px;
+    right: 10px;
+}
+
+
+.container .form-content .form span p {
+    color: var(--primary-red);
+    text-align: right;
+    margin-right: 0.5rem;
 }
 
 .container .form-content .form button {
@@ -130,7 +146,7 @@ body {
     cursor: pointer;
     transition: all 0.2s ease-in;
     border-radius: 5px;
-    margin-bottom: 10px;
+    margin: 10px 0;
 }
 
 .container .form-content .form button:hover {
@@ -186,7 +202,7 @@ body {
     }
 
     .container .form-content .form button {
-        padding: 1rem;
+        padding: 0.7rem;
     }
 }
 
@@ -219,63 +235,4 @@ body {
     .container .form-content {
         width: 100%;
     }
-}
-
-.hide {
-    display: none;
-}
-
-.container .form-content .incomplete input {
-    border: 1.5px solid var(--primary-red);
-}
-
-.container .form-content .incomplete form {
-    position: relative;
-}
-
-.container .form-content .incomplete form img {
-    position: absolute;
-    width: 20px;
-}
-
-.container .form-content .incomplete form #img1 {
-    right: 15px;
-    top: 7px;
-}
-.container .form-content .incomplete form #img2 {
-    right: 15px;
-    top: 75px;
-}
-.container .form-content .incomplete form #img3 {
-    right: 15px;
-    top: 144px;
-}
-.container .form-content .incomplete form #img4 {
-    right: 15px;
-    top: 212px;
-}
-
-.container .form-content .incomplete form .para {
-    color: var(--primary-red);
-    text-align: right;
-    margin-bottom: 0.5rem;
-}
-
-.container .form-content .incomplete form input::placeholder {
-    color: var(--primary-red);
-}
-
-.container .form-content #form-4 #img2 {
-    top:55px
-}
-
-.container .form-content #form-5 #img3 {
-    top: 102px;
-}
-
-.container .form-content .form .complete {
-    border: 1.5px solid var(--grayish-blue);
-}
-.container .form-content #form-6 #img4 {
-    top: 149px;
 }

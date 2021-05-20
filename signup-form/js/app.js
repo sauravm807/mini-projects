@@ -1,40 +1,56 @@
 let claimBtn = document.getElementById("claim-btn");
-claimBtn.addEventListener("click", function () {
+claimBtn.addEventListener("click", function (e) {
+    
     let input1 = document.getElementById("input1");
     let input2 = document.getElementById("input2");
     let input3 = document.getElementById("input3");
     let input4 = document.getElementById("input4");
-    let form1 = document.getElementById("form-1");
-    let form2 = document.getElementById("form-2");
-    let form3 = document.getElementById("form-3");
-    let form4 = document.getElementById("form-4");
-    let form5 = document.getElementById("form-5");
-    let form6 = document.getElementById("form-6");
+    let span1 = document.querySelector("#input1 + span");
+    let span2 = document.querySelector("#input2 + span");
+    let span3 = document.querySelector("#input3 + span");
+    let span4 = document.querySelector("#input4 + span");
 
-    if ((!input1.value) && (!input2.value) && (!input3.value) && (!input4.value)) {
-        form2.classList.toggle("hide");
-        form1.classList = "hide";
+    input1.style.borderColor = "hsl(246, 25%, 77%)";
+    input2.style.borderColor = "hsl(246, 25%, 77%)";
+    input3.style.borderColor = "hsl(246, 25%, 77%)";
+    input4.style.borderColor = "hsl(246, 25%, 77%)";
+    
+
+
+    if (!input4.value) {
+        span4.classList.remove("hide");
+        input4.removeAttribute("placeholder");
+        input4.style.borderColor = "hsl(0, 100%, 74%)";
+    } else {
+        span4.classList.add("hide");
     }
-    else {
-        if (!input1.value) {
-            form3.classList.toggle("hide");
-            form1.classList = "hide";
-        }
 
-        if (!input2.value) {
-            form4.classList.toggle("hide");
-            form1.classList = "hide";
-        }
+    if (!input1.value) {
+        span1.classList.remove("hide");
+        input1.removeAttribute("placeholder");
+        input1.style.borderColor = "hsl(0, 100%, 74%)";
 
-        if (!input3.value) {
-            form5.classList.toggle("hide");
-            form1.classList = "hide";
-        }
+    } else {
+        span1.classList.add("hide");
+    }
 
-        if (!input4.value) {
-            form6.classList.toggle("hide");
-            form1.classList = "hide";
-        }
+    if (!input2.value) {
+        span2.classList.remove("hide");
+        input2.removeAttribute("placeholder");
+        input2.style.borderColor = "hsl(0, 100%, 74%)";
+
+    } else {
+        span2.classList.add("hide");
+    }
+
+    if (!input3.value) {
+        span3.classList.remove("hide");
+        input3.setAttribute("placeholder", "email@example.com");
+        input3.style.borderColor = "hsl(0, 100%, 74%)";
+        // let placeholder = document.querySelector("#input3::placeholder");
+        // placeholder.style.color = "red";
+    } else {
+        span3.classList.add("hide");
     }
 
 });
