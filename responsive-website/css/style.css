@@ -193,7 +193,7 @@ html {
     display: block;
     margin: auto;
 }
-
+/* contents */
 /* sectionRight section */
 .sectionRight {
     display: flex;
@@ -232,7 +232,7 @@ html {
     width: 90%;
     border-radius: 15px;
 }
-
+/* section left */
 .sectionLeft {
     display: flex;
     flex-direction: row-reverse;

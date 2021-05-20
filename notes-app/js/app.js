@@ -1,7 +1,7 @@
 "use Strict";
 showNotes();
 
-document.querySelector("#addBtn").addEventListener("click", function (e) {
+document.querySelector("#addBtn").addEventListener("click", function () {
     let addTxt = document.querySelector("#addTxt");
     let addTitle = document.querySelector("#addTitle");
     let notes = localStorage.getItem("notes");
@@ -17,7 +17,7 @@ document.querySelector("#addBtn").addEventListener("click", function (e) {
         title: addTitle.value,
         text: addTxt.value
     };
-    if ((addTxt.value.length) && (addTitle.value)) {
+    if ((addTxt.value.trim().length) && (addTitle.value.trim())) {
         notesObj.push(myObj);
     }
     localStorage.setItem("notes", JSON.stringify(notesObj)); //setting notes in the local storage
@@ -40,7 +40,7 @@ function showNotes() {
     for (let i = 0; i < notesObj.length; i++) {
         html += ` <div class="noteCard my-2 mx-2 card" style="width: 18rem;">
                     <div class="card-body">
-                        <h5 class="card-title">${i + 1, notesObj[i].title}</h5>
+                        <h5 class="card-title">${notesObj[i].title}</h5>
                         <p class="card-text">${notesObj[i].text}</p>
                         <button class="btn btn-primary my-1" onclick="deleteNotes(${i})" >Delete Note</button>
                     </div>
@@ -76,6 +76,7 @@ search.addEventListener("input", function () {
     let noteCards = document.getElementsByClassName("noteCard");
     Array.from(noteCards).forEach((elem) => {
         let para = elem.getElementsByTagName("p")[0].innerText.toLowerCase();
+        console.log(para)
         if (para.includes(searchVal)) {
             elem.style.display = "block";
         } else {

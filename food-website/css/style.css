@@ -1,258 +1,1027 @@
+/* Fonts */
+@font-face {
+    font-family: "Raleway-regular";
+    src: url(../fonts/Raleway-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Raleway-bold";
+    src: url(../fonts/Raleway-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Raleway-semibold";
+    src: url(../fonts/Raleway-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: "Raleway-black";
+    src: url(../fonts/Raleway-Black.ttf);
+}
+
+@font-face {
+    font-family: "Raleway-extrabold";
+    src: url(../fonts/Raleway-ExtraBold.ttf);
+}
+
+/* Color Variables */
+:root {
+    --primary: #EEBF00;
+    --secondary: #232B38;
+    --ternary: #6C6C6C;
+    --danger: #FE4545;
+    --pure: #FEFEFE;
+    --light: #F0F0F0;
+    --heaven: #FFFFFF;
+    --footer: #2D333F;
+}
+
+/* Reset */
 * {
-    padding: 0%;
-    margin: 0%;
-    font-family: 'Baloo Bhai 2', cursive;
+    padding: 0;
+    margin: 0;
 }
 
-html {
-    scroll-behavior: smooth;
+body {
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+    font-family: "Raleway-regular";
 }
 
-/* Navigation Bar */
-#navbar {
-    display: flex;
-    align-items: center;
-    position: relative;
-    /* width: 100%; */
-}
-
-#navbar::before {
-    content: "";
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    background-color: black;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    opacity: 0.4;
-    ;
-}
-
-
-/* Navigation Bar logo */
-
-#logo {
-    margin: 0px 30px
-}
-
-#logo img {
-    margin: 0px 58px 0px 0px;
-    height: 75px;
-}
-
-/* Navigation Bar list styling */
-
-#navbar ul {
-    display: flex;
-}
-
-#navbar ul li {
-    font-size: 1.3rem;
-    list-style-type: none;
-    padding-bottom: 12px;
-}
-
-
-#navbar ul a {
-    text-decoration: none;
-    padding: 0px 15px;
-    border-radius: 20px;
-    color: white;
-    transition: background-color;
-    transition-duration: 0.3s;
-}
-
-#navbar ul a:hover {
-    color: rgb(214, 213, 213);
-    background-color: rgb(151, 105, 52);
-    box-shadow: 1px 1px 1px 1px rgb(15, 15, 15);
-    font-weight: bold;
-}
-
-/* Home content */
-
-#home {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 380px;
-}
-
-#home::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0%;
-    background: url(../bg3.jpg) no-repeat center center/cover;
-    height: 81%;
-    width: 100%;
-    z-index: -1;
-    opacity: 0.9;
-}
-
-.h-primary {
-
-    padding: 10px 200px;
-    font-size: 2.2rem;
-}
-
-
-
-#home p {
-    padding: 5px 200px;
+/* utility class */
+.text-center {
     text-align: center;
 }
 
-#home button {
-    padding: 3px 20px;
-    margin: 20px;
-    background-color: rgb(151, 105, 52);
-    border-radius: 10px;
-    border: 1px solid black;
-    font-size: 1.1rem;
+.text-primary {
+    color: var(--primary);
+}
+
+.text-pure {
+    color: var(--pure);
+}
+
+.flex {
+    display: flex;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.item-center {
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+
+}
+
+.btn {
+    padding: 0.85rem;
+    border-radius: 4px;
+    border: none;
+    line-height: 0.8rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--heaven);
+}
+
+.btn-primary:hover {
+    color: var(--primary);
+    background: var(--heaven);
+    border: 1px solid var(--primary);
+}
+
+.btn-secondary {
+    background: var(--secondary);
+    color: var(--heaven);
+}
+
+.btn-secondary:hover {
+    color: var(--secondary);
+    background: var(--heaven);
+    border: 1px solid var(--secondary);
+
+}
+
+.shadow {
+    position: relative;
+    background: var(--heaven);
+}
+
+.shadow:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 69px;
+    background-image: url(../icons/shadow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+    bottom: -22px;
+}
+
+.shadow-sm {
+    position: relative;
+    background: var(--heaven);
+}
+
+.shadow-sm:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 69px;
+    background-image: url(../icons/shadow-sm.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+    bottom: -22px;
+    left: 0%;
+}
+
+.section-heading {
+    font-family: "Raleway-bold";
+    text-align: center;
+    position: relative;
+    margin-bottom: 6rem;
+}
+
+.section-heading::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 30px;
+    background-image: url(../icons/hr.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    bottom: -40px;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.main-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.nav-background {
+    width: 100%;
+    height: 100%;
+    background: var(--light);
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0;
+    z-index: 1;
+}
+
+.nav-trigger {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    padding: 15px;
+    display: none;
+}
+
+.nav-trigger svg {
+    transform: rotate(90deg) scaleX(-1);
+    width: 40px;
+    height: 40px;
     cursor: pointer;
 }
 
-#home button:hover {
-    color: rgb(214, 213, 213);
-    background-color: rgb(151, 105, 52);
-    font-weight: bold;
-    box-shadow: 1px 1px 1px 1px rgb(15, 15, 15);
+.site-content-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: var(--heaven);
+    z-index: 2;
+    transition: all 0.3s ease;
 }
 
-/* SERVICES SECTION */
-#services-container {
+.site-content-wrapper.scaled {
+    transform: scale(0.9) translateX(90%);
+    border-radius: 3px;
+    box-shadow: 0 3px 10px 0 var(--secondary);
+}
+
+.site-content {
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+}
+
+/* Header  */
+header.topbar {
+    background-color: var(--secondary);
+    color: var(--pure);
+    font-family: "Raleway-semibold";
+    padding: 0.25rem 0;
+}
+
+header.topbar .auth div a {
+    color: var(--pure);
+    text-decoration: none;
+}
+
+header.topbar .icons a {
+    margin-right: 0.6rem;
+}
+
+header.topbar .auth .divider {
+    padding: 0 1rem;
+}
+
+header.topbar .auth img {
+    margin-right: 0.3rem;
+}
+
+
+/* Navigation Bar */
+nav .top {
+    padding: 1.5rem 0;
+}
+
+nav .top .contact h5,
+nav .top .time h5 {
+    font-family: "Raleway-black";
+    margin-bottom: 0.25rem;
+}
+
+nav .top .contact h6,
+nav .top .time h6 {
+    font-family: "Raleway-medium";
+    letter-spacing: 0.055rem;
+    font-size: 0.75rem;
+    color: var(--ternary);
+}
+
+nav .top .contact img,
+nav .top .time img {
+    margin-right: 1rem;
+    width: 1.8rem;
+    padding-bottom: 1.6rem;
+}
+
+nav .navbar a {
+    text-decoration: none;
+    color: var(--secondary);
+    font-family: "Raleway-semibold";
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+    transition: all 0.3s ease;
+}
+
+nav .navbar a.active {
+    background: var(--primary);
+    color: var(--pure);
+}
+
+nav .navbar a:hover {
+    background: var(--primary);
+    color: var(--pure);
+}
+
+header.hero {
+    height: 600px;
+    background: url(../images/hero.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+header.hero .container {
+    position: relative;
+}
+
+header.hero .welcome span {
+    font-family: "Raleway-bold";
+    color: var(--secondary);
+    margin-right: 0.75rem;
+}
+
+header.hero .welcome {
+    margin-bottom: 0.35rem;
+}
+
+header.hero h1 {
+    font-family: "Raleway-extrabold";
+    color: var(--secondary);
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+}
+
+header.hero h1 span {
+    color: var(--primary);
+}
+
+header.hero p {
+    font-family: "Raleway-medium";
+    width: 50%;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+header.hero button:first-child {
+    margin-right: 0.5rem;
+}
+
+header.hero .heroimage {
+    position: absolute;
+    top: -57px;
+    right: 0px;
+}
+
+section {
+    padding: 4rem 0;
+}
+
+/* Section Top products */
+section.top-products {
+    background: var(--light);
+}
+
+section.top-products .food-slider .food-card {
+    background: var(--heaven);
+    padding: 1.5rem 0;
+    border-radius: 4px;
+}
+
+section.top-products .food-slider .food-card .product-image img {
+    width: 80%;
+    height: 200px;
+    padding-bottom: 1rem;
+    object-fit: contain;
+}
+
+hr {
+    border: 1px solid var(--light);
+    opacity: 0.8;
+    margin: 1rem 0;
+}
+
+section.top-products .food-slider .food-card h2 {
+    font-family: "Raleway-bold";
+    font-size: 1.3rem;
+    margin-bottom: 0.25rem;
+}
+
+section.top-products .food-slider .food-card .stars {
+    margin-bottom: 0.5rem;
+}
+
+section.top-products .food-slider .food-card .stars img {
+    margin-right: 0.25rem;
+
+}
+
+section.top-products .food-slider .food-card .price {
+    font-family: "Raleway-medium";
+    color: var(--danger);
+    margin-bottom: 1rem;
+}
+
+section.top-products .food-slider .food-card button {
+    font-family: "Raleway-medium";
+    font-size: 1rem;
+    color: var(--secondary);
+    background: var(--heaven);
+    border: 2px solid var(--primary);
+    border-radius: 4px;
+    width: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+section.top-products .food-slider .food-card button:hover {
+    background: var(--primary);
+    color: var(--heaven);
+}
+
+.food-slider .food-card button img {
+    background: var(--primary);
+    padding: 0.5rem;
+    height: 32px;
+    margin-right: 1.2rem;
+    margin-left: -1px;
+}
+
+.slick-slide {
+    margin: 0 27px;
+}
+
+.slick-list {
+    margin: 0 -27px;
+}
+
+.slick-track {
+    padding: 1rem 0;
+}
+
+.top-products .slider {
+    position: relative;
+}
+
+.top-products .slider-btn {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 4px;
+    background: var(--primary);
+    cursor: pointer;
+    outline: none;
+}
+
+.prev-btn {
+    position: absolute;
+    top: 46%;
+    left: -5%;
+    z-index: 1;
+}
+
+.next-btn {
+    position: absolute;
+    top: 46%;
+    right: -5%;
+    z-index: 1;
+}
+
+.top-products .btn-wrapper {
+    margin-top: 2rem;
+}
+
+/* Section About meal */
+section.about-meal img {
+    width: 85%;
+}
+
+section.about-meal h2 {
+    font-family: "Raleway-bold";
+    font-size: 1.4rem;
+    color: var(--secondary);
+    margin-bottom: 2rem;
+    line-height: 1.9rem;
+}
+
+section.about-meal p {
+    line-height: 1.7rem;
+    margin-bottom: 4rem;
+}
+
+/*Section Our Services */
+section.our-services {
+    background-color: var(--light);
+    position: relative;
+    z-index: 0;
+}
+
+section.our-services .wrapper {
+    margin-right: -2rem;
+    margin-top: 8rem;
+}
+
+section.our-services .service-card {
+    background: var(--heaven);
+    padding: 2rem;
+    padding-top: 4rem;
+    border-radius: 4px;
+    position: relative;
+    margin-right: 2rem;
+}
+
+section.our-services .service-card img {
+    position: absolute;
+    top: -46px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+section.our-services .service-card h2 {
+    font-family: "Raleway-bold";
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+section.our-services .service-card p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* section big-deal */
+section.big-deal .timer {
+    margin-right: -2rem;
+    margin-bottom: 2rem;
+}
+
+section.big-deal {
+    background: linear-gradient(rgba(35, 43, 56, 0.9),
+            rgba(35, 43, 56, 0.9)), url(../images/food-table.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+section.big-deal .timer div {
+    margin-right: 2rem;
+    background: var(--primary);
+    width: 150px;
+    height: 150px;
+    border-radius: 4px;
     display: flex;
     flex-direction: column;
-    background-color: rgb(253, 223, 218);
-}
-
-#services-container h1 {
-    font-family: 'Bree Serif', serif;
-    margin: auto;
-}
-
-#services {
-    margin: 30px;
-    display: flex;
-}
-
-#services .box {
-    border: 2px solid brown;
-    border-radius: 30px;
-    margin: 5px 10px;
-    padding: 5px 10px;
-    box-shadow: 1px 1px 1px 1px grey;
-    background-color: rgb(248, 240, 217);
-}
-
-.box p {
-    text-align: center;
-    font-family: 'Bree Serif', serif;
-}
-
-#services img {
-    height: 150px;
-    width: 160px;
-    display: block;
-    margin: auto;
-}
-
-.h-secondary {
-    text-align: center;
-    font-size: 1.2rem;
-}
-
-/* CLIENT SECTION */
-
-#client-section {
-    height: 300px;
-    position: relative;
-}
-
-#client-section::before {
-    content: "";
-    position: absolute;
-    background: url(../bg1.jpg);
-    height: 300px;
-    width: 100%;
-    opacity: 0.4;
-}
-
-#client-section h1 {
-    text-align: center;
-}
-
-.client {
-    display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.client div {
-    padding: 20px;
+section.big-deal .timer div span:first-child {
+    font-family: "Raleway-semibold";
+    font-size: 2.5rem;
+    color: var(--heaven);
+    margin-bottom: 0.05rem;
 }
 
-.client img {
-    height: 100px;
+section.big-deal .timer div span:last-child {
+    font-family: "Raleway-medium";
+    color: var(--heaven);
+
 }
 
-/* CONTACT SECTION */
-#contact {
+/* section Blog */
+section.latest-news {
+    background: var(--light);
     position: relative;
+    z-index: 0;
 }
 
-#contact::before {
-    content: "";
-    background: url(../contact.jpg)no-repeat center center/cover;
-    position: absolute;
-    height: 100%;
+section.latest-news .article-wrapper {
+    margin-right: -2rem;
+}
+
+section.latest-news .article-wrapper .card {
+    margin-right: 2rem;
+    background: var(--heaven);
+    border-radius: 4px;
+}
+
+section.latest-news .article-wrapper .card img {
     width: 100%;
-    z-index: -1;
-    opacity: 0.6;
-
 }
 
-#contact h1 {
-    text-align: center;
-    font-family: 'Bree Serif', serif;
-
-
+section.latest-news .article-wrapper .card .card-content {
+    padding: 2rem;
 }
 
-#contact-box {
+section.latest-news .article-wrapper .card .card-content .post-meta {
+    margin-bottom: 1rem;
+}
+
+section.latest-news .article-wrapper .card .card-content .post-meta span {
+    font-size: 0.8rem;
+}
+
+section.latest-news .article-wrapper .card .card-content .post-meta .comment {
+    margin-left: 0.6rem;
+}
+
+section.latest-news .article-wrapper .card .card-content h2 {
+    font-family: "Raleway-bold";
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+section.latest-news .article-wrapper .card .card-content p {
+    line-height: 1.5;
+}
+
+section.latest-news .btn-wrapper {
+    margin-top: 2rem;
+}
+
+/* Subscribe section */
+section.subscribe {
+    background-color: var(--primary);
+}
+
+section.subscribe .container div:first-child img {
+    width: 90%;
+}
+
+section.subscribe .container div:first-child {
+    flex: 1;
+}
+
+section.subscribe .container div:last-child {
+    flex: 1;
+}
+
+section.subscribe h1 {
+    font-family: "Raleway-bold";
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+section.subscribe p {
+    font-family: "Raleway-medium";
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+section.subscribe .input-wrap {
+    background: var(--heaven);
+    padding: 0.3rem;
+    border-radius: 4px;
+}
+
+section.subscribe .input-wrap input {
+    width: 100%;
+    border: none;
+    padding: 0 1rem;
+    font-size: 1rem;
+    outline: none;
+}
+
+section.subscribe .input-wrap button {
+    padding: 0.6rem 2rem;
+    border: none;
+    cursor: pointer;
+    background: var(--primary);
+    color: var(--pure);
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+section.subscribe .input-wrap button:hover {
+    background: var(--secondary);
+}
+
+/* contact us section */
+
+section.contact-us {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+section.contact-us .contact-info-wrapper {
+    padding: 4rem 0;
+}
+
+section.contact-us .contact-info>div>div {
     display: flex;
-    justify-content: center;
     align-items: center;
+    margin-bottom: 2rem;
 }
 
-#contact-box form {
-    width: 40%;
-    padding: 20px;
+section.contact-us .contact-info>div>div img {
+    margin-right: 1rem;
 }
 
-#contact-box input,
-#contact-box textarea {
-    width: 100%;
-    padding: 1px 10px;
-    border-radius: 5px;
-    border: 1px solid black;
+section.contact-us .contact-info>div>div>div {
+    display: flex;
+    flex-direction: column;
 }
 
-#contact-box label {
-    width: 40%;
-    font-size: 1.1rem;
-    font-family: 'Bree Serif', serif;
-
+section.contact-us .contact-info>div>div>div span:first-child {
+    font-family: "Raleway-bold";
+    margin-bottom: 0.25rem;
 }
 
+section.contact-us .map {
+    filter: grayscale(100%);
+}
 
+/* footer */
 footer {
-    background-color: black;
-    color: white;
-    text-align: center;
-    font-family: 'Bree Serif', serif;
+    background: var(--footer);
+    padding: 4rem 0;
+}
 
+footer .container {
+    display: flex;
+    color: var(--pure);
+}
+
+footer .box {
+    flex: 1;
+    margin-right: 2rem;
+    text-align: center;
+}
+
+footer .instagram-api img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+footer .instagram-api .post-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+footer .instagram-api .post-wrap>div {
+    width: calc(1/3*100% - (1 - 1/3)*10px);
+    margin: 3px;
+}
+
+footer .box ul {
+    list-style-type: none;
+}
+
+footer .box ul li {
+    margin-bottom: 0.8rem;
+}
+
+footer .box ul a {
+    color: var(--pure);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+footer .box ul a:hover {
+    color: var(--primary);
+}
+
+footer .box h3 {
+    border-bottom: 1px solid var(--primary);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+footer .box p {
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+footer .box:nth-child(3)>div {
+    display: flex;
+    justify-content: center;
+}
+
+footer .box:nth-child(3) {
+    text-align: left;
+}
+
+footer .box:nth-child(3) h3 {
+    text-align: center;
+}
+
+footer .box:nth-child(3)>div img {
+    margin-right: 0.8rem;
+}
+
+footer .box:nth-child(3) ul li {
+    margin-bottom: 1.2rem;
+}
+
+footer.copyright {
+    padding: 1rem 0;
+    background: var(--secondary);
+    color: var(--heaven);
+    font-size: 0.75rem;
+}
+
+footer.copyright a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+
+.nav-background .mobile-logo {
+    padding: 1rem;
+}
+
+.nav-background .mobile-nav {
+    padding: 1rem;
+}
+
+.nav-background .mobile-nav ul li {
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+.nav-background .mobile-nav ul li a {
+    text-decoration: none;
+    color: var(--secondary);
+    font-family: "Raleway-medium";
+}
+
+.nav-background .mobile-nav ul li a:hover {
+    color: var(--primary);
+}
+
+.nav-background .contact,
+.nav-background .time {
+    padding: 1rem;
+    padding-left: 0;
+}
+
+.nav-background .contact img,
+.nav-background .time img {
+    margin-right: 1rem;
+}
+
+.nav-background .contact,
+.nav-background .time h5 {
+    font-family: "Raleway-bold";
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+}
+
+.nav-background .contact h6,
+.nav-background .time h6 {
+    font-size: 0.75rem;
+}
+
+.nav-background .cart {
+    margin-bottom: 2rem;
+}
+
+.nav-background .cart a {
+    color: var(--secondary);
+    text-decoration: none;
+    font-family: "Raleway-bold";
+}
+
+.nav-background .cart img {
+    margin-right: 0.75rem;
+    height: 20px;
+    width: 20px;
+}
+
+
+/* Media queries */
+@media (min-width:576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width:768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width:992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width:1200px) {
+    .container {
+        max-width: 1152px;
+    }
+}
+
+@media (max-width:992px) {
+    .nav-trigger {
+        display: block;
+    }
+
+    header.topbar,
+    nav {
+        display: none;
+    }
+
+    header.hero {
+        margin-top: -4rem;
+    }
+
+
+    header.hero .heroimage {
+        right: -160px;
+        top: 100px;
+    }
+
+    .top-products .slider-btn {
+        display: none !important;
+    }
+
+    .latest-news .article-wrapper {
+        flex-direction: column;
+    }
+
+    .latest-news .article-wrapper .card {
+        margin-bottom: 4rem;
+    }
+
+    footer .instagram-api .post-wrap div {
+        width: calc(1/2*100% - (1 - 1/3)*10px);
+    }
+}
+
+@media (max-width:768px) {
+    .about-meal .meal-wrap {
+        flex-direction: column;
+    }
+
+    .about-meal .meal-wrap img {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    section.our-services .wrapper {
+        flex-direction: column;
+    }
+
+    section.our-services .wrapper .service-card {
+        margin-bottom: 6rem;
+    }
+
+    footer .container {
+        flex-direction: column;
+    }
+    footer .box {
+        text-align: left;
+        margin-right: 0;
+        margin-bottom: 3rem;
+    }
+
+    footer .box:nth-child(3) h3 {
+        text-align: left;
+    } 
+
+    footer .box:nth-child(3) > div {
+        display: block;
+    }
+}
+
+@media (max-width:576px) {
+    
+    header.hero .heroimage {
+        right: -235px;
+        top: 150px;
+    }
+    header.hero .container{
+        padding-left: 1rem;
+    }
+    header.hero {
+        margin-top: -3rem;
+    }
+    section.big-deal .timer > div {
+        margin-right: 0.40rem;
+    }
+    section.big-deal .timer {
+        margin-right: 0rem;
+    }
+    section.subscribe .container{
+        flex-direction: column;
+        padding:0.50rem;
+    }
+    section.our-services .wrapper {
+        margin-right: 0rem;
+        margin-top: 8rem;
+    }
+    section.our-services .service-card {
+        margin-right: 0;
+    }
+    section.big-deal .timer > div:last-child {
+        margin-right: 0;
+    }
+    section.latest-news .article-wrapper {
+        margin-right: 0rem;
+    }
+    section.latest-news .article-wrapper .card {
+        margin-right: 0;
+    }
+    section.contact-us {
+        flex-direction: column;
+    }
+    section.subscribe .container div:last-child {
+        padding: 0.8rem;
+    }
+    .container {
+        width: auto;
+    }
+    .site-content {
+        overflow-x: hidden;
+    }
 }
