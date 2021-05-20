@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="flex justify-center items-center">
+    <div class="container flex justify-between items-center">
+        <div class="content">
+            <h1>Learn to code by watching others</h1>
+            <p> See how experienced developers solve problems in real-time. Watching scripted tutorials is great,
+                but understanding how developers think is invaluable. </p>
+        </div>
+
+        <div class="form-content">
+            <div class="money">
+                <button> <span>Try it free 7 days</span> then $20/mo. thereafter</button>
+            </div>
+            <div class="form" id="form-1">
+                <form class="flex flex-column">
+                    <input id="input1" name="firstname" type="text" placeholder="First Name" required>
+                    <input id="input2" name="lastname" type="text" placeholder="Last Name" required>
+                    <input id="input3" name="email" type="email" placeholder="Email Address" required>
+                    <input id="input4" name="password" type="password" placeholder="Password" required>
+                    <button id="claim-btn">CLAIM YOUR FREE TRIAL </button>
+                    <p>By clicking the button, you are agreeing to our <span>Terms and Services</span> </p>
+                </form>
+            </div>
+            <div class="incomplete form hide " id="form-2">
+                <form class="flex flex-column">
+
+                    <input type="text">
+                    <img id="img1" src="./images/icon-error.svg" alt="">
+                    <p class="para">First Name cannot be empty</p>
+
+                    <input type="text">
+                    <img id="img2" src="./images/icon-error.svg" alt="">
+                    <p class="para">Last Name cannot be empty</p>
+
+                    <input type="email" placeholder="email@example.com">
+                    <img id="img3" src="./images/icon-error.svg" alt="">
+                    <p class="para">Looks like this is not an email</p>
+
+                    <input type="password">
+                    <img id="img4" src="./images/icon-error.svg" alt="">
+                    <p class="para">Password cannot be empty</p>
+
+                    <button>CLAIM YOUR FREE TRIAL </button>
+                    <p>By clicking the button, you are agreeing to our <span>Terms and Services</span> </p>
+                </form>
+            </div>
+            <div class="incomplete form hide" id="form-3">
+                <form class="flex flex-column">
+
+                    <input type="text">
+                    <img id="img1" src="./images/icon-error.svg" alt="">
+                    <p class="para">First Name cannot be empty</p>
+                    <input type="text" class="complete">
+                    <input type="email" class="complete">
+                    <input type="password" class="complete">
+                    <button>CLAIM YOUR FREE TRIAL </button>
+                    <p>By clicking the button, you are agreeing to our <span>Terms and Services</span> </p>
+                </form>
+            </div>
+            <div class="incomplete form hide " id="form-4">
+                <form class="flex flex-column">
+                    <input type="text" class="complete">
+                    <input type="text">
+                    <img id="img2" src="./images/icon-error.svg" alt="">
+                    <p class="para">Last Name cannot be empty</p>
+                    <input type="email" class="complete">
+                    <input type="password" class="complete">
+                    <button>CLAIM YOUR FREE TRIAL </button>
+                    <p>By clicking the button, you are agreeing to our <span>Terms and Services</span> </p>
+                </form>
+            </div>
+            <div class="incomplete form hide " id="form-5">
+                <form class="flex flex-column">
+
+                    <input type="text" class="complete">
+                    <input type="text" class="complete">
+                    <input type="email" placeholder="email@example.com">
+                    <img id="img3" src="./images/icon-error.svg" alt="">
+                    <p class="para">Looks like this is not an email</p>
+                    <input type="password" class="complete">
+                    <button>CLAIM YOUR FREE TRIAL </button>
+                    <p>By clicking the button, you are agreeing to our <span>Terms and Services</span> </p>
+                </form>
+            </div>
+            <div class="incomplete form hide" id="form-6">
+                <form class="flex flex-column">
+
+                    <input type="text" class="complete">
+                    <input type="text" class="complete">
+                    <input type="email" class="complete">
+                    <input type="password">
+                    <img id="img4" src="./images/icon-error.svg" alt="">
+                    <p class="para">Password cannot be empty</p>
+
+                    <button>CLAIM YOUR FREE TRIAL </button>
+                    <p>By clicking the button, you are agreeing to our <span>Terms and Services</span> </p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>
