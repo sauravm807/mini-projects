@@ -1,6 +1,6 @@
 let claimBtn = document.getElementById("claim-btn");
 claimBtn.addEventListener("click", function (e) {
-    
+    e.preventDefault();
     let input1 = document.getElementById("input1");
     let input2 = document.getElementById("input2");
     let input3 = document.getElementById("input3");
@@ -14,7 +14,7 @@ claimBtn.addEventListener("click", function (e) {
     input2.style.borderColor = "hsl(246, 25%, 77%)";
     input3.style.borderColor = "hsl(246, 25%, 77%)";
     input4.style.borderColor = "hsl(246, 25%, 77%)";
-    
+
 
 
     if (!input4.value) {
@@ -43,12 +43,12 @@ claimBtn.addEventListener("click", function (e) {
         span2.classList.add("hide");
     }
 
+    input3.classList.remove("red-placeholder");
     if (!input3.value) {
         span3.classList.remove("hide");
         input3.setAttribute("placeholder", "email@example.com");
         input3.style.borderColor = "hsl(0, 100%, 74%)";
-        // let placeholder = document.querySelector("#input3::placeholder");
-        // placeholder.style.color = "red";
+        input3.classList.add("red-placeholder");
     } else {
         span3.classList.add("hide");
     }

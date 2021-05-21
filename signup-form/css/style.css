@@ -227,6 +227,10 @@ body {
 }
 
 @media (max-width:600px) {
+    body {
+    background: hsl(0, 100%, 74%) url(../images/bg-intro-mobile.png);
+
+    }
     .container {
         flex-direction: column;
         padding: 0 1rem;
@@ -235,4 +239,8 @@ body {
     .container .form-content {
         width: 100%;
     }
+}
+
+.red-placeholder::placeholder {
+    color:hsl(0, 100%, 74%);
 }
