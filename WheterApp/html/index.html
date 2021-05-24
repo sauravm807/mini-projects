@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+        integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+        crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap" rel="stylesheet">
+    <style>
+        * {
+    margin: 0%;
+    padding: 0%;
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(245, 240, 233);
+}
+
+.box {
+    border: 1px solid rgb(4, 94, 211);
+    border-radius: 0.5rem;
+    background: rgb(140, 192, 226);
+    box-shadow: 0 0.2rem 3rem rgb(0 0 0 / 20%);
+    overflow: hidden;
+    position: relative;
+    min-width: 25rem;
+    min-height: 42rem;
+}
+
+.wave {
+    position: absolute;
+    top: 103%;
+    left: 49%;
+    background-color: rgb(255, 255, 255);
+    width: 50rem;
+    height: 50rem;
+    opacity: 0.7;
+    margin-left: -25rem;
+    margin-top: -25rem;
+    border-radius: 50%;
+  }
+
+.info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45%;
+    z-index: 4;
+}
+
+.location {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-weight: 800;
+    font-size: 1.7rem;
+}
+
+.fa-street-view {
+    animation: rotates 3s linear infinite alternate;
+    font-size: 1.6rem;
+}
+
+@keyframes rotates {
+    from {
+        transform: translateX(-0.5rem);
+    }
+
+    to {
+        transform: translateX(0.5rem);
+    }
+}
+
+.date {
+    text-align: center;
+    margin-top: 0.5rem;
+    color: rgb(89, 93, 98);
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.temp {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 4rem;
+}
+
+.tempMinMax {
+    text-align: center;
+    color: rgb(89, 93, 98);
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.weatherIcon {
+    height: 55%;
+    display: flex;
+    padding-top: 6rem;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    animation: resize 2s  infinite alternate ;
+}
+
+@keyframes resize {
+    from {
+        font-size: 5rem;
+    } to {
+        font-size: 8rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .box {
+        width: 90vw;
+        height: 80vh;
+    }
+    .wave {
+       top: 92%;
+       width: 60rem;
+       left: 40%;
+    }
+ }
+
+@media (max-height:500px) {
+    
+}
+
+    </style>
+    <title>Know Whether Information by city name</title>
+</head>
+
+<body>
+
+    <div class="box">
+        <div class="wave"></div>
+
+        <div class="weatherIcon">
+            
+        </div>
+
+        <div class="info">
+            <h2 class="location"><i class="fas fa-street-view"></i> &nbsp; {%location%},{%country%}</h2>
+            <p class="date"></p>
+            <h1 class="temp">{%tempval%}&deg;C</h1>
+            <h3 class="tempMinMax">Min {%tempmin%}&deg;C | Max {%tempmax%}&deg;C</h3>
+        </div>
+    </div>
+
+    <script>
+        let curDate = document.querySelector(".date");
+        let weatherIcon = document.querySelector(".weatherIcon");
+
+        let tempStatus = "{%temperatureStatus}"
+        if(tempStatus == "Sunny") {
+            weatherIcon.innerHTML = `<i class="fas fa-sun" style="color: #eccc68;"></i>`;
+        } else if (tempStatus == "Clouds") {
+            weatherIcon.innerHTML = `<i class="fas fa-cloud" style="color: #f1f2f6;"></i>`;
+        }else if (tempStatus == "Rainy") {
+            weatherIcon.innerHTML = `<i class="fas fa-cloud-shower-heavy" style="color: #a4b0be;"></i>`;
+        } else {
+            weatherIcon.innerHTML = `<i class="far fa-cloud" style="color: #44c3de;"></i>`;
+        }
+
+
+
+        function getDay() {
+            let date = new Date;
+            let day = ["SUN", "MON", "TUE", "WED", "THURS", "FRI", "SAT", "SUN"]
+            let currDay = day[date.getDay()];
+
+            let month = ['JAN', 'FEB', 'MAR', "APR", 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC']
+            let currMonth = month[date.getMonth()];
+            let currDate = date.getDate();
+            if (currDate < 10) {
+                currDate = `0${currDate}`;
+            }
+            return `${currDay} | ${currMonth} ${currDate}`
+        }
+
+        function getTime() {
+            let date = new Date;
+            let hours = date.getHours();
+            let min = date.getMinutes();
+            let amPm = "AM";
+            if (hours > 11) {
+                amPm = "PM";
+                if (hours > 12) {
+                    hours -= 12;
+                }
+            }
+
+            return `${hours}:${min}${amPm}`;
+        }
+
+        curDate.innerHTML = `${getDay()} | ${getTime()}`;
+    </script>
+</body>
+
+</html>
