@@ -9,7 +9,7 @@ function replaceVal(tempVal, orgVal) {
     newFile = newFile.replace("{%tempmax%}", orgVal.main.temp_max);
     newFile = newFile.replace("{%location%}", orgVal.name);
     newFile = newFile.replace("{%country%}", orgVal.sys.country);
-    newFile = newFile.replace("{%temperatureStatus}", orgVal.weather[0].main);
+    newFile = newFile.replace("{%temperatureStatus%}", orgVal.weather[0].main);
 
     return newFile;
 }

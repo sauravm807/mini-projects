@@ -12,132 +12,117 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap" rel="stylesheet">
     <style>
         * {
-    margin: 0%;
-    padding: 0%;
-    font-size: 62.5%;
-}
+            margin: 0%;
+            padding: 0%;
+            font-size: 62.5%;
+        }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(245, 240, 233);
-}
+        body {
+            font-family: 'Poppins', sans-serif;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(245, 240, 233);
+        }
 
-.box {
-    border: 1px solid rgb(4, 94, 211);
-    border-radius: 0.5rem;
-    background: rgb(140, 192, 226);
-    box-shadow: 0 0.2rem 3rem rgb(0 0 0 / 20%);
-    overflow: hidden;
-    position: relative;
-    min-width: 25rem;
-    min-height: 42rem;
-}
+        .box {
+            border: 1px solid rgb(4, 94, 211);
+            border-radius: 0.5rem;
+            background: rgb(140, 192, 226);
+            box-shadow: 0 0.2rem 3rem rgb(0 0 0 / 20%);
+            overflow: hidden;
+            position: relative;
+            min-width: 25rem;
+            min-height: 42rem;
+        }
 
-.wave {
-    position: absolute;
-    top: 103%;
-    left: 49%;
-    background-color: rgb(255, 255, 255);
-    width: 50rem;
-    height: 50rem;
-    opacity: 0.7;
-    margin-left: -25rem;
-    margin-top: -25rem;
-    border-radius: 50%;
-  }
+        .wave {
+            position: absolute;
+            top: 103%;
+            left: 49%;
+            background-color: rgb(255, 255, 255);
+            width: 50rem;
+            height: 50rem;
+            opacity: 0.7;
+            margin-left: -25rem;
+            margin-top: -25rem;
+            border-radius: 50%;
+        }
 
-.info {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 45%;
-    z-index: 4;
-}
+        .info {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 45%;
+            z-index: 4;
+        }
 
-.location {
-    margin-top: 1.5rem;
-    text-align: center;
-    font-weight: 800;
-    font-size: 1.7rem;
-}
+        .location {
+            margin-top: 1.5rem;
+            text-align: center;
+            font-weight: 800;
+            font-size: 1.7rem;
+        }
 
-.fa-street-view {
-    animation: rotates 3s linear infinite alternate;
-    font-size: 1.6rem;
-}
+        .fa-street-view {
+            animation: rotates 3s linear infinite alternate;
+            font-size: 1.6rem;
+        }
 
-@keyframes rotates {
-    from {
-        transform: translateX(-0.5rem);
-    }
+        @keyframes rotates {
+            from {
+                transform: translateX(-0.5rem);
+            }
 
-    to {
-        transform: translateX(0.5rem);
-    }
-}
+            to {
+                transform: translateX(0.5rem);
+            }
+        }
 
-.date {
-    text-align: center;
-    margin-top: 0.5rem;
-    color: rgb(89, 93, 98);
-    font-size: 1.2rem;
-    font-weight: 300;
-    text-transform: uppercase;
-}
+        .date {
+            text-align: center;
+            margin-top: 0.5rem;
+            color: rgb(89, 93, 98);
+            font-size: 1.2rem;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
 
-.temp {
-    margin-top: 2rem;
-    text-align: center;
-    font-size: 4rem;
-}
+        .temp {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 4rem;
+        }
 
-.tempMinMax {
-    text-align: center;
-    color: rgb(89, 93, 98);
-    font-size: 1.2rem;
-    font-weight: 300;
-}
+        .tempMinMax {
+            text-align: center;
+            color: rgb(89, 93, 98);
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
 
-.weatherIcon {
-    height: 55%;
-    display: flex;
-    padding-top: 6rem;
-    align-items: center;
-    justify-content: center;
-    font-size: 5rem;
-    animation: resize 2s  infinite alternate ;
-}
+        .weatherIcon {
+            height: 55%;
+            display: flex;
+            padding-top: 6rem;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            animation: resize 2s infinite alternate;
+        }
 
-@keyframes resize {
-    from {
-        font-size: 5rem;
-    } to {
-        font-size: 8rem;
-    }
-}
+        @keyframes resize {
+            from {
+                font-size: 5rem;
+            }
 
-@media (max-width: 600px) {
-    .box {
-        width: 90vw;
-        height: 80vh;
-    }
-    .wave {
-       top: 92%;
-       width: 60rem;
-       left: 40%;
-    }
- }
-
-@media (max-height:500px) {
-    
-}
-
+            to {
+                font-size: 8rem;
+            }
+        }
     </style>
     <title>Know Whether Information by city name</title>
 </head>
@@ -148,7 +133,7 @@ body {
         <div class="wave"></div>
 
         <div class="weatherIcon">
-            
+
         </div>
 
         <div class="info">
@@ -163,18 +148,16 @@ body {
         let curDate = document.querySelector(".date");
         let weatherIcon = document.querySelector(".weatherIcon");
 
-        let tempStatus = "{%temperatureStatus}"
-        if(tempStatus == "Sunny") {
+        let tempStatus = "{%temperatureStatus%}";
+        if (tempStatus == "Sunny") {
             weatherIcon.innerHTML = `<i class="fas fa-sun" style="color: #eccc68;"></i>`;
         } else if (tempStatus == "Clouds") {
             weatherIcon.innerHTML = `<i class="fas fa-cloud" style="color: #f1f2f6;"></i>`;
-        }else if (tempStatus == "Rainy") {
+        } else if (tempStatus == "Rainy") {
             weatherIcon.innerHTML = `<i class="fas fa-cloud-shower-heavy" style="color: #a4b0be;"></i>`;
         } else {
             weatherIcon.innerHTML = `<i class="far fa-cloud" style="color: #44c3de;"></i>`;
         }
-
-
 
         function getDay() {
             let date = new Date;
