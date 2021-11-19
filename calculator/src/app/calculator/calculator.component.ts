@@ -51,12 +51,17 @@ export class CalculatorComponent implements OnInit {
   onClickAdd() {
     this.operationVal = this.value;
     this.operationVal += '+';
+    this.value = "0"
   }
 
   onClickshowVal() {
     if (this.operationVal) {
       if (this.operationVal.includes('+')) {
-        console.log(this.operationVal)
+        let index = this.operationVal.indexOf('+');
+        let num1 = this.operationVal.slice(0, index);
+        let num2 = this.operationVal.slice(index + 1)
+        console.log('num2', num2)
+        console.log('num1', num1)
       }
     }
   }
