@@ -1,0 +1,102 @@
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.item-center {
+  align-items: center;
+  justify-content: center;
+}
+
+/* container styles*/
+div.main {
+  width: auto;
+  height: auto;
+  margin: auto;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.calculator {
+  background: black;
+  margin: auto;
+  width: auto;
+  height: auto;
+  padding: 1.5rem;
+  padding-top: 8rem;
+  border-radius: 5px;
+  border: 1px solid transparent;
+}
+
+/* screen styles */
+div.screen {
+  color: white;
+  font-size: 0.5in;
+  font-weight: 400;
+  text-align: right;
+  padding-right: 10px;
+}
+
+/* buttons styles */
+div.main div.calculator div.btns {
+  width: 100%;
+}
+
+div.main div.calculator div.btns button.normal-btn-grey {
+  background: #746969;
+}
+
+div.main div.calculator div.btns button.normal-btn-grey:hover {
+   background: rgb(165, 164, 164);
+}
+
+button.btn {
+ padding: 1rem;
+ border-radius: 50%;
+ width: 3rem;
+ border: 1px solid transparent;
+ margin: 5px;
+ color: white;
+ font-size: 15px;
+}
+
+button.btn:hover {
+  cursor: pointer;
+}
+
+div.main div.calculator div.btns button.normal-btn {
+  background: rgb(165, 164, 164);
+  color: black;
+}
+
+div.main div.calculator div.btns button.normal-btn:hover {
+   background: white;
+}
+
+div.main div.calculator div.btns button.last-btn {
+  background: #ffb605;
+}
+
+div.main div.calculator div.btns button.last-btn:hover {
+  background: yellow;
+}
+
+div.main div.calculator div.btns button.zero-btn {
+  background: #746969;
+  padding: 0.8rem;
+  width: 7.2rem;
+  border-radius: 25px;
+  border: 1px solid transparent;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+div.main div.calculator div.btns button.zero-btn:hover {
+  background: rgb(165, 164, 164);
+}

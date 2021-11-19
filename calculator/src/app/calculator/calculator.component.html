@@ -1,0 +1,38 @@
+<div class="main flex item-center">
+  <div class="calculator flex-column item-center">
+    <div class="screen">
+      {{value}}
+    </div>
+    <div class="flex flex-column item-center">
+      <div class="btns flex item-center">
+        <button class="btn normal-btn" (click)="onClickReset()"><b>C</b></button>
+        <button class="btn normal-btn" (click)="onClickNegative()"><b>+/-</b></button>
+        <button class="btn normal-btn" (click)="onClickPercentage()"><b>%</b></button>
+        <button class="btn last-btn" (click)="onClickDivide()"><b>÷</b></button>
+      </div>
+      <div class="btns flex item-center">
+        <button class="btn normal-btn-grey" (click)="onClickSetVal('7')"><b>7</b></button>
+        <button class="btn normal-btn-grey" (click)="onClickSetVal('8')"><b>8</b></button>
+        <button class="btn normal-btn-grey" (click)="onClickSetVal('9')"><b>9</b></button>
+        <button class="btn last-btn" (click)="onClickMultiply()"><b>x</b></button>
+      </div>
+      <div class="btns flex item-center">
+        <button class="btn normal-btn-grey" (click)="onClickSetVal('4')"><b>4</b></button>
+        <button class="btn normal-btn-grey" (click)="onClickSetVal('5')"><b>5</b></button>
+        <button class="btn normal-btn-grey" (click)="onClickSetVal('6')"><b>6</b></button>
+        <button class="btn last-btn" (click)="onClickSubtract()"><b>-</b></button>
+      </div>
+      <div class="btns flex item-center">
+        <button class="btn normal-btn-grey" (click)="onClickSetVal('1')"><b>1</b></button>
+        <button class="btn normal-btn-grey" (click)="onClickSetVal('2')"><b>2</b></button>
+        <button class="btn normal-btn-grey" (click)="onClickSetVal('3')"><b>3</b></button>
+        <button class="btn last-btn" (click)="onClickAdd()"><b>+</b></button>
+      </div>
+      <div class="btns flex item-center">
+        <button class="zero-btn" (click)="onClickSetVal('0')"><b>0</b></button>
+        <button class="btn normal-btn-grey" (click)="onClickSetVal('.')"><b>.</b></button>
+        <button class="btn last-btn" (click)="onClickshowVal()"><b> = </b></button>
+      </div>
+    </div>
+  </div>
+</div>
