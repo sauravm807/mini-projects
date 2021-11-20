@@ -83,7 +83,7 @@ div.main div.calculator div.btns button.last-btn {
 }
 
 div.main div.calculator div.btns button.last-btn:hover {
-  background: yellow;
+  background: #ffd740;
 }
 
 div.main div.calculator div.btns button.zero-btn {

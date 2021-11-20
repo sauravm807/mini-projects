@@ -10,12 +10,11 @@ function replaceVal(tempVal, orgVal) {
     newFile = newFile.replace("{%location%}", orgVal.name);
     newFile = newFile.replace("{%country%}", orgVal.sys.country);
     newFile = newFile.replace("{%temperatureStatus%}", orgVal.weather[0].main);
-
     return newFile;
 }
 const server = http.createServer((req, res) => {
     if (req.url == "/") {
-        requests("http://api.openweathermap.org/data/2.5/weather?q=bangalore&units=metric&appid=274004e3790c6e6cdcbc2e6893f7fe38")
+        requests("http://api.openweathermap.org/data/2.5/weather?q=london&units=metric&appid=274004e3790c6e6cdcbc2e6893f7fe38")
             .on("data", function (chunk) {
                 let objData = JSON.parse(chunk);
                 let arrData = [objData];
@@ -28,7 +27,7 @@ const server = http.createServer((req, res) => {
                 if (err) {
                     return console.log("Connection closed due to errors", err);
                 }
-               res.end();
+                res.end();
             });
     }
 });

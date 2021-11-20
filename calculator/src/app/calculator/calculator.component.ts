@@ -18,6 +18,7 @@ export class CalculatorComponent implements OnInit {
 
   onClickReset() {
     this.value = "0";
+    this.operationVal = "0";
   }
 
   onClickNegative() {
@@ -36,40 +37,115 @@ export class CalculatorComponent implements OnInit {
   onClickDivide() {
     this.operationVal = this.value;
     this.operationVal += '/';
+    this.value = "0";
   }
 
   onClickMultiply() {
     this.operationVal = this.value;
     this.operationVal += '*';
+    this.value = "0";
   }
 
   onClickSubtract() {
     this.operationVal = this.value;
     this.operationVal += '-';
+    this.value = "0";
   }
 
   onClickAdd() {
     this.operationVal = this.value;
     this.operationVal += '+';
-    this.value = "0"
+    this.value = "0";
+  }
+
+  doOperation(operator: string, num1: string, num2: string) {
+    // this.operationVal += this.value;
+    // let index = this.operationVal.indexOf(operator);
+    // console.log(this.operationVal)
+    // if (index === 0) {
+    //   this.operationVal = this.operationVal.slice(1);
+    //   index = this.operationVal.indexOf(operator);
+    //   // console.log(index)
+    //   num1 = "-" + this.operationVal.slice(0, index);
+    //   num2 = this.operationVal.slice(index + 1);
+    // } else {
+    //   num1 = this.operationVal.slice(0, index);
+    //   num2 = this.operationVal.slice(index + 1);
+    // }
+
+    // console.log('num1', num1)
+    // console.log('num2', num2)
+    if (operator == '+') {
+      return (Number(num1) + Number(num2)).toString();
+    } else if (operator == '-') {
+      return (Number(num1) - Number(num2)).toString();
+    } else if (operator == '*') {
+      return (Number(num1) * Number(num2)).toString();
+    } else {
+      return (Number(num1) / Number(num2)).toString();
+    }
   }
 
   onClickshowVal() {
     if (this.operationVal) {
+      this.operationVal += this.value;
+      let index = this.operationVal.indexOf('-');
+      let num1: string = "", num2: string = "";
+      if (index === 0) {
+        this.operationVal = this.operationVal.slice(1);
+        console.log("gchvjv",this.operationVal)
+        if (this.operationVal.includes('+')) {
+          index = this.operationVal.indexOf('+');
+        }
+
+        if (this.operationVal.includes('-')) {
+          index = this.operationVal.indexOf('+');
+        }
+
+        if (this.operationVal.includes('*')) {
+          index = this.operationVal.indexOf('+');
+        }
+
+        if (this.operationVal.includes('/')) {
+          index = this.operationVal.indexOf('+');
+        }
+        num1 = "-" + this.operationVal.slice(0, index);
+        num2 = this.operationVal.slice(index + 1);
+      } else {
+        console.log(this.operationVal)
+        num1 = this.operationVal.slice(0, index);
+        num2 = this.operationVal.slice(index + 1);
+      }
+      // console.log('num1', num1)
+      // console.log('num2', num2)
+
       if (this.operationVal.includes('+')) {
-        let index = this.operationVal.indexOf('+');
-        let num1 = this.operationVal.slice(0, index);
-        let num2 = this.operationVal.slice(index + 1)
-        console.log('num2', num2)
-        console.log('num1', num1)
+        console.log('Inside +')
+        this.value = this.doOperation('+', num1, num2);
+        this.operationVal = "0";
+      }
+
+      if (this.operationVal.includes('-')) {
+        console.log('Inside -')
+        this.value = this.doOperation('-', num1, num2);
+        this.operationVal = "0";
+      }
+
+      if (this.operationVal.includes('*')) {
+        console.log('Inside *')
+        this.value = this.doOperation('*', num1, num2);
+        this.operationVal = "0";
+      }
+
+      if (this.operationVal.includes('/')) {
+        console.log('Inside /')
+        this.value = this.doOperation('/', num1, num2);
+        this.operationVal = "0";
       }
     }
   }
 
   onClickSetVal(val: string) {
-    // if(!Number(this.value)) {
-    //   this.value = '';
-    // }
     if (this.value == '0') {
       this.value = '';
     }
