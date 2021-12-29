@@ -12,13 +12,25 @@ export class CalculatorComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  class1: string = "screen";
+  class2: string = "";
   value: string = '0';
   result!: number;
   operationVal: string = '0';
 
+
   onClickReset() {
     this.value = "0";
     this.operationVal = "0";
+    this.removeClass();
+  }
+
+  addClass() {
+    this.class2 = "smallScreen";
+  }
+
+  removeClass() {
+    this.class2 = "";
   }
 
   onClickNegative() {
@@ -27,54 +39,49 @@ export class CalculatorComponent implements OnInit {
     } else {
       this.value = this.value.substring(1);
     }
+
+    if (this.value.length > 7) {
+      this.addClass();
+    }
   }
 
   onClickPercentage() {
     let intVal = Number(this.value) / 100;
     this.value = intVal.toString();
+    if (this.value.length > 7) {
+      this.addClass();
+    }
   }
 
   onClickDivide() {
     this.operationVal = this.value;
     this.operationVal += '/';
     this.value = "0";
+    this.removeClass();
   }
 
   onClickMultiply() {
     this.operationVal = this.value;
     this.operationVal += '*';
     this.value = "0";
+    this.removeClass();
   }
 
   onClickSubtract() {
     this.operationVal = this.value;
     this.operationVal += '-';
     this.value = "0";
+    this.removeClass();
   }
 
   onClickAdd() {
     this.operationVal = this.value;
     this.operationVal += '+';
     this.value = "0";
+    this.removeClass();
   }
 
   doOperation(operator: string, num1: string, num2: string) {
-    // this.operationVal += this.value;
-    // let index = this.operationVal.indexOf(operator);
-    // console.log(this.operationVal)
-    // if (index === 0) {
-    //   this.operationVal = this.operationVal.slice(1);
-    //   index = this.operationVal.indexOf(operator);
-    //   // console.log(index)
-    //   num1 = "-" + this.operationVal.slice(0, index);
-    //   num2 = this.operationVal.slice(index + 1);
-    // } else {
-    //   num1 = this.operationVal.slice(0, index);
-    //   num2 = this.operationVal.slice(index + 1);
-    // }
-
-    // console.log('num1', num1)
-    // console.log('num2', num2)
     if (operator == '+') {
       return (Number(num1) + Number(num2)).toString();
     } else if (operator == '-') {
@@ -82,66 +89,98 @@ export class CalculatorComponent implements OnInit {
     } else if (operator == '*') {
       return (Number(num1) * Number(num2)).toString();
     } else {
-      return (Number(num1) / Number(num2)).toString();
+      return ((Number(num1) / Number(num2))).toString();
     }
+  }
+
+  findNum1Num2(operation: string) {
+    let num1: string, num2: string;
+    let index = operation.indexOf('-');
+    let operator = "";
+
+    if (index === 0) {
+      operation = operation.slice(1);
+      if (operation.includes('+')) {
+        index = operation.indexOf('+');
+        operator = "+";
+      }
+
+      if (operation.includes('-')) {
+        index = operation.indexOf('-');
+        operator = "-";
+      }
+
+      if (operation.includes('*')) {
+        index = operation.indexOf('*');
+        operator = "*";
+      }
+
+      if (operation.includes('/')) {
+        index = operation.indexOf('/');
+        operator = "/";
+      }
+
+      num1 = '-' + operation.slice(0, index);
+      num2 = operation.slice(index + 1);
+    } else {
+      if (operation.includes('+')) {
+        index = operation.indexOf('+');
+        operator = "+";
+      }
+
+      if (operation.includes('-')) {
+        index = operation.indexOf('-');
+        operator = "-";
+      }
+
+      if (operation.includes('*')) {
+        index = operation.indexOf('*');
+        operator = "*";
+      }
+
+      if (operation.includes('/')) {
+        index = operation.indexOf('/');
+        operator = "/";
+      }
+
+      num1 = operation.slice(0, index);
+      num2 = operation.slice(index + 1);
+    }
+    return { num1, num2, operator };
   }
 
   onClickshowVal() {
     if (this.operationVal) {
       this.operationVal += this.value;
-      let index = this.operationVal.indexOf('-');
-      let num1: string = "", num2: string = "";
-      if (index === 0) {
-        this.operationVal = this.operationVal.slice(1);
-        console.log("gchvjv",this.operationVal)
-        if (this.operationVal.includes('+')) {
-          index = this.operationVal.indexOf('+');
-        }
+      const { num1, num2, operator } = this.findNum1Num2(this.operationVal);
 
-        if (this.operationVal.includes('-')) {
-          index = this.operationVal.indexOf('+');
-        }
-
-        if (this.operationVal.includes('*')) {
-          index = this.operationVal.indexOf('+');
-        }
-
-        if (this.operationVal.includes('/')) {
-          index = this.operationVal.indexOf('+');
-        }
-        num1 = "-" + this.operationVal.slice(0, index);
-        num2 = this.operationVal.slice(index + 1);
-      } else {
-        console.log(this.operationVal)
-        num1 = this.operationVal.slice(0, index);
-        num2 = this.operationVal.slice(index + 1);
-      }
-      // console.log('num1', num1)
-      // console.log('num2', num2)
-
-      if (this.operationVal.includes('+')) {
-        console.log('Inside +')
+      if (operator == "+") {
         this.value = this.doOperation('+', num1, num2);
         this.operationVal = "0";
       }
 
-      if (this.operationVal.includes('-')) {
-        console.log('Inside -')
+      if (operator == "-") {
         this.value = this.doOperation('-', num1, num2);
         this.operationVal = "0";
       }
 
-      if (this.operationVal.includes('*')) {
-        console.log('Inside *')
+      if (operator == "*") {
         this.value = this.doOperation('*', num1, num2);
         this.operationVal = "0";
       }
 
-      if (this.operationVal.includes('/')) {
-        console.log('Inside /')
+      if (operator == "/") {
         this.value = this.doOperation('/', num1, num2);
         this.operationVal = "0";
       }
+    }
+
+    if (this.value.indexOf('.') > -1) {
+      this.value = (Number(this.value).toFixed(2)).toString();
+    }
+
+    if (this.value.length > 7) {
+      this.addClass();
     }
   }
 
@@ -150,6 +189,8 @@ export class CalculatorComponent implements OnInit {
       this.value = '';
     }
     this.value += val;
+    if (this.value.length > 7) {
+      this.addClass();
+    }
   }
-
 }
